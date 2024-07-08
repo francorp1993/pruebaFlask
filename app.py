@@ -1,3 +1,15 @@
+from flask import Flask
+from flask_cors import CORS
+from flask_login import LoginManager
+from componentes.modelos import Usuario  # Asegúrate de que esta ruta de importación sea correcta
+
+app = Flask(__name__)
+app.json.ensure_ascii = False
+
+# Configuración CORS para todas las rutas de la aplicación
+CORS(app)
+
+# Configuración CORS específica para rutas bajo /api
 # CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Utiliza una variable de entorno para la clave secreta en producción
